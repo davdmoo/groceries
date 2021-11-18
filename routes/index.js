@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const users = require('./userRoutes.js');
 const products = require('./productRoutes.js');
-const admin = require('./adminRoutes.js')
+const admin = require('./adminRoutes.js');
+const Controller = require('../controllers/productController')
 
-router.get('/', (req, res) => res.render('home'));
+router.get('/', Controller.getProducts);
 
 router.use('/users', users);
 

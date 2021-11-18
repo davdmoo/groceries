@@ -1,5 +1,6 @@
 const { Category, Product, User } = require('../models');
 const { Op } = require('sequelize');
+const priceFormatter = require('../helpers/price-formatter')
 
 class Controller {
     static getEmptyList(req, res) {
@@ -20,9 +21,25 @@ class Controller {
     }
 
     static getProducts(req, res) {
-        Product.findAll()
+        let option = {
+            include: Category
+        }
+        
+        if (req.query.sort === 'name') {
+            option.order = [['name', 'ASC']]
+        } else if (req.query.sort === 'price') {
+            option.order = [['price', 'ASC']]
+        } else if (req.query.sort === 'stock') {
+            option.order = [['stock', 'ASC']]
+        } else if (req.query.sort === 'sold') {
+            option.order = [['sold', 'ASC']]
+        } else if (req.query.sort === 'CategoryId') {
+            option.order = [['Category', 'name', 'ASC']]
+        }
+
+        Product.findAll(option)
         .then(data => {
-            res.render('admin-products', {products: data})
+            res.render('adminPageNew', {products: data, priceFormatter})
         })
         .catch(err => {
             res.send(err)
@@ -129,6 +146,16 @@ class Controller {
         })
         .catch(err => {
             res.send(err);
+        })
+    }
+
+    static getUsers(req, res) {
+        User.findAll()
+        .then(data => {
+            res.render('userList', {users: data})
+        })
+        .catch(err => {
+            res.send(err)
         })
     }
 }
