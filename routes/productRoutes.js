@@ -6,4 +6,6 @@ router.get('/', Controller.allProducts);
 
 router.get('/:id', Controller.getProductDetail);
 
+router.get('/:id/buy', Controller.buyProduct);
+
 module.exports = router;

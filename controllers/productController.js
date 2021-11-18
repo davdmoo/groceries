@@ -42,12 +42,23 @@ class Controller {
         })
     }
 
-    static getBuyProduct(req, res) {
-        
-    }
-
-    static postBuyProduct(req, res) {
-
+    static buyProduct(req, res) {
+        Product.decrement('stock', {
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(data => {
+            return Product.increment('sold', {
+                where: { id: +req.params.id }
+            })
+        })
+        .then(data2 => {
+            res.redirect('/products')
+        })
+        .catch(err => {
+            res.send(err);
+        })
     }
 }
 
