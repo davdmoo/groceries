@@ -18,6 +18,11 @@ module.exports = (sequelize, DataTypes) => {
     CategoryId: DataTypes.INTEGER,
     imageUrl: DataTypes.STRING
   }, {
+    hooks: {
+      beforeCreate: (user) => {
+        user.sold = 0
+      }
+    },
     sequelize,
     modelName: 'Product',
   });

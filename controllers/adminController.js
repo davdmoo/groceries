@@ -86,9 +86,9 @@ class Controller {
     }
 
     static postAddProduct(req, res) {
-        let {name, stock, price, CategoryId, description} = req.body;
+        let {name, stock, price, CategoryId, description, imageUrl} = req.body;
 
-        Product.create({name, stock, price, CategoryId, description})
+        Product.create({name, stock, price, CategoryId, description, imageUrl})
         .then(data => {
             res.redirect('/admin');
         })
@@ -113,14 +113,15 @@ class Controller {
     }
 
     static postEditProduct(req, res) {
-        let {name, stock, price, CategoryId, description} = req.body;
+        let {name, stock, price, CategoryId, description, imageUrl} = req.body;
 
         Product.update({
             name: req.body.name,
             stock: req.body.stock,
             price: req.body.price,
             description: req.body.description,
-            CategoryId: req.body.CategoryId
+            CategoryId: req.body.CategoryId,
+            imageUrl: req.body.imageUrl
         },
         {
             where: {
@@ -154,7 +155,6 @@ class Controller {
             include: User
         })
         .then(data => {
-            console.log(data);
             res.render('userList', {users: data})
         })
         .catch(err => {

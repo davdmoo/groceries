@@ -27,7 +27,6 @@ class Controller {
         }
 
         if(keyword) {
-            console.log(keyword)
             option.where = {
                 name: {
                     [Op.iLike]: `%${keyword}%`
