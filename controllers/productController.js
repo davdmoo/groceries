@@ -4,7 +4,9 @@ const priceFormatter = require('../helpers/price-formatter');
 class Controller {
     static getProducts(req, res) {
         let option = {
-            include: Category
+            include: Category,
+            order: [['sold','desc']],
+            limit: 4
         }
 
         Product.findAll(option)
