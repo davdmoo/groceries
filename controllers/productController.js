@@ -9,8 +9,21 @@ class Controller {
 
         Product.findAll(option)
         .then(data => {
-            console.log(priceFormatter(10000));
             res.render('homePageNew', {products: data, priceFormatter})
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static allProducts(req,res) {
+        let option = {
+            include: Category
+        }
+
+        Product.findAll(option)
+        .then(data => {
+            res.render('allProducts', {products: data, priceFormatter})
         })
         .catch(err => {
             res.send(err)
