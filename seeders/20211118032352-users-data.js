@@ -9,6 +9,7 @@ module.exports = {
       delete user.id;
       user.createdAt = new Date();
       user.updatedAt = new Date();
+      user.role = "user";
     })
 
      return queryInterface.bulkInsert('Users', users);

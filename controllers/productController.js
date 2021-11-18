@@ -1,4 +1,4 @@
-const { Category, Product } = require('../models');
+const { Category, Product, UserProfile, User } = require('../models');
 const priceFormatter = require('../helpers/price-formatter');
 
 class Controller {
@@ -9,7 +9,6 @@ class Controller {
 
         Product.findAll(option)
         .then(data => {
-            console.log(priceFormatter(10000));
             res.render('homePageNew', {products: data, priceFormatter})
         })
         .catch(err => {
