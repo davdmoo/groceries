@@ -15,6 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     role: DataTypes.STRING
   }, {
+    hooks: {
+      beforeCreate: (user) => {
+        user.role = "user";
+      }
+    },
     sequelize,
     modelName: 'User',
   });

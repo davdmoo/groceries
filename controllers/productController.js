@@ -1,4 +1,4 @@
-const { Category, Product } = require('../models');
+const { Category, Product, UserProfile, User } = require('../models');
 const priceFormatter = require('../helpers/price-formatter');
 
 class Controller {

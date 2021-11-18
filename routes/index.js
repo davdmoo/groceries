@@ -3,9 +3,16 @@ const router = express.Router();
 const users = require('./userRoutes.js');
 const products = require('./productRoutes.js');
 const admin = require('./adminRoutes.js');
-const Controller = require('../controllers/productController')
+const ProductController = require('../controllers/productController');
+const UserController = require('../controllers/userController');
 
-router.get('/', Controller.getProducts);
+router.get('/', ProductController.getProducts);
+
+router.get('/register', UserController.getRegister);
+router.post('/register', UserController.postRegister);
+
+router.get('/login', UserController.login);
+router.post('/login', UserController.postLogin);
 
 router.use('/users', users);
 
