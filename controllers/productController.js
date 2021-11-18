@@ -10,6 +10,16 @@ class Controller {
             res.send(err)
         })
     }
+
+    static getProductDetail(req, res) {
+        Product.findByPk(+req.params.id)
+        .then(data => {
+            res.render('product-detail', {product: data})
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
 }
 
 module.exports = Controller;

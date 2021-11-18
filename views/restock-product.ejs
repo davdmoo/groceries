@@ -16,10 +16,17 @@
         <button>Products</button>
     </a>
 
-    <a href="/admin">
-        <button>Admin Page</button>
+    <a href="/users">
+        <button>User list</button>
     </a>
+    <hr>
 
-    <hr><br>
+    <h3><%=product.name%></h3>
+    <form action="/admin/restock/<%=product.id%>" method="post">
+        <p>Restock</p>
+        <input type="number" name="stock"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>

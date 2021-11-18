@@ -27,22 +27,37 @@
     <tr>
       <th>No.</th>
       <th>Name</th>
+      <th>Stock</th>
       <th>Price</th>
-      <th> </th>
+      <th>Description</th>
+      <th>Sold count</th>
+      <th>Category</th>
+      <th>Product Image URL</th>
+      <th>Action</th>
     </tr>
-    <% products.forEach((product, i)=> { %>
+    <% emptyProducts.forEach((product, i)=> { %>
       <tr>
         <td><%= i + 1 %></td>
         <td><%= product.name %></td>
+        <td><%= product.stock %></td>
         <td><%= product.price %></td>
+        <td><%= product.description %></td>
+        <td><%= product.sold %></td>
+        <td><%= product.Category.name %></td>
         <td>
-          <a href="/products/<%=product.id%>">
-            <button>Detail</button>
-          </a>
+            <a href="<%= product.imageUrl %>"><%= product.imageUrl %></a>
         </td>
+        <td>
+            <a href="/admin/restock/<%=product.id%>">
+                <button>Restock</button>
+            </a>
+            <a href="/admin/delete/<%=product.id%>">
+                <button>Delete</button>
+            </a>
+        </td>
+      </tr>
       <% }) %>
   </table>
-
 </body>
 
 </html>
