@@ -3,10 +3,20 @@ const app = express();
 const port = 3000;
 const routes = require('./routes');
 const Controller = require('./controllers/productController')
+const session = require('express-session')
 
 app.set ('view engine', 'ejs');
 app.use(express.static('style'));
 app.use (express.urlencoded({extended: false}));
+app.use(session({
+    secret: 'postgres',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { 
+        secure: false,
+        sameSite: true
+    }
+  }))
 app.use('/', routes);
 
 // app.get('/products', Controller.getProducts)
