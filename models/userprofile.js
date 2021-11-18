@@ -26,6 +26,12 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     }
   }, {
+
+    // hooks: {
+    //   beforeCreate: (user) => {
+    //     user.UserId = 1
+    //   }
+    // },
     sequelize,
     modelName: 'UserProfile',
   });

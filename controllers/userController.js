@@ -2,9 +2,11 @@ const { User, UserProfile } = require('../models');
 
 class Controller {
     static userProfile(req, res) {
-        UserProfile.findByPk(+req.params.id)
+        User.findByPk(+req.params.id, {
+            include: UserProfile
+        })
         .then(data => {
-            res.render('user-profile', {profile: data})
+            res.render('myProfile', {profile: data})
         })
         .catch(err => {
             res.send(err)
@@ -21,14 +23,11 @@ class Controller {
 
         User.create({name, email, password})
         .then(data => {
-            return data;
+
+            return UserProfile.create({address, city, gender, age, UserId: data.id});
         })
         .then(data2 => {
-            UserProfile.create({address, city, gender, age})
 
-            return data2;
-        })
-        .then(() => {
             res.redirect('/login');
         })
         .catch(err => {
