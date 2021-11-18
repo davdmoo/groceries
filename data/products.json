@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Kinder Joy",
+        "stock": 10,
+        "price": 10000,
+        "sold": 20,
+        "description": "Kinder Joy, Temukan kelezatannya Desain baru ini menggabungkan rasa lezat krim susu dan kakao dalam kemasan tertutup, dengan mainan dalam wadah terpisah.",
+        "imageUrl": "https://images.tokopedia.net/img/cache/900/VqbcmM/2021/8/22/94e06e5e-abef-48df-a63c-ce146a36334b.jpg",
+        "CategoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Fitbar",
+        "stock": 50,
+        "price": 8000,
+        "sold": 10,
+        "description": "Fitbar adalah snack sehat yang terbuat dari Oat, Quinoa dan Whole Wheat yang merupakan sumber serat. Serta Fitbar bebas dari kolesterol, bebas dari lemak trans, dan memiliki kandungan kalori yang rendah. Jauh lebih rendah dibandingkan snack-snack lainnya.",
+        "imageUrl": "https://sirclocdn.com/shop-luwes/products/_200622092912_4854%20FITBAR%20FRUITS%2025%20GR_zoom.jpg",
+        "CategoryId": 2
+    },
+    {
+        "id": 3,
+        "name": "Sovia",
+        "stock": 40,
+        "price": 28000,
+        "sold": 3,
+        "description": "Sovia adalah minyak goreng berkualitas yang diproses dari kelapa sawit pilihan yang mengandung vitamin A dan vitamin D, juga dilengkapi 1.9g omega 6 dan 5.7g omega 9 per sajian.",
+        "imageUrl": "https://assets.klikindomaret.com/share/20037566_1.jpg",
+        "CategoryId": 3
+    },
+    {
+        "id": 3,
+        "name": "Sovia",
+        "stock": 40,
+        "price": 28000,
+        "sold": 3,
+        "description": "Sovia adalah minyak goreng berkualitas yang diproses dari kelapa sawit pilihan yang mengandung vitamin A dan vitamin D, juga dilengkapi 1.9g omega 6 dan 5.7g omega 9 per sajian.",
+        "imageUrl": "https://assets.klikindomaret.com/share/20037566_1.jpg",
+        "CategoryId": 5
+    },
+    {
+        "id": 4,
+        "name": "Mizone",
+        "stock": 100,
+        "price": 5000,
+        "sold": 100,
+        "description": "Keringetan abis beraktivitas penuh dari pagi? Minum Mizone Activ', dengan rasa favorit konsumen: Lychee Lemon!Isotonik yang dilengkapi Vitamin B3, B6, B12, balikin cairan tubuh dan pembentukan energi, bantu badan siap lanjut terus!(Harga: Rp5,500)Kini tersedia dalam ukuran Mini 350ml yang praktis dibawa kemana aja cocok buat kalian yang aktif!(Harga: Rp3,500)",
+        "imageUrl": "https://assets.klikindomaret.com/share/20037566_1.jpg",
+        "CategoryId": 2
+    },
+    {
+        "id": 5,
+        "name": "Spicy Chick",
+        "stock": 10,
+        "price": 43000,
+        "sold": 2,
+        "description": "FIESTA Chicken Spicy Chick [500 g] merupakan makanan instan yang terbuat dari daging pilihan dan diproses secara higienis. Makanan serbaguna ini dapat disajikan dengan menu makanan lain bersama keluarga atau teman terdekat Anda.",
+        "imageUrl": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//94/MTA-3247366/mizone_mizone-mood-up-cranberry-minuman-isotonik-bernutrisi--500-ml--12-pcs-_full05.jpg",
+        "CategoryId": 4
+    }
+]

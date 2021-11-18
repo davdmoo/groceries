@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokopaedi</title>
+</head>
+<body>
+    <h3>Tokopaedi</h3>
+    <a href="/products">
+        <button>Product list</button>
+    </a>
+    <a href="/users">
+        <button>User list</button>
+    </a>
+    <hr>
+
+    <table border=1>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Stock</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Product Image</th>
+        </tr>
+        <% products.forEach((product, i) => { %>
+            <tr>
+              <td><%= i + 1 %></td>
+              <td><%= product.name %></td>
+            </tr>
+        <% }) %>
+      </table> 
+</body>
+</html>

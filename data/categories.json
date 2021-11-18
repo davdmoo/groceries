@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Kid"
+    },
+    {
+        "id": 2,
+        "name": "Beverages"
+    },
+    {
+        "id": 3,
+        "name": "Snack"
+    },
+    {
+        "id": 4,
+        "name": "Frozen Food"
+    },
+    {
+        "id": 5,
+        "name": "Cooking Needs"
+    }
+]
