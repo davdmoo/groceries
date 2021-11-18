@@ -6,13 +6,34 @@ const admin = require('./adminRoutes.js');
 const ProductController = require('../controllers/productController');
 const UserController = require('../controllers/userController');
 
-router.get('/', ProductController.getProducts);
 
 router.get('/register', UserController.getRegister);
 router.post('/register', UserController.postRegister);
 
 router.get('/login', UserController.login);
 router.post('/login', UserController.postLogin);
+
+router.get('/', ProductController.getProducts);
+
+router.use( function(req,res,next) {
+    if(!req.session.userId) {
+        const error = `Please login first!`
+        res.redirect(`/login?error=${error}`)
+    }else{
+        next()
+    }
+})
+
+router.use( function(req,res,next) {
+    if(req.session.userId && req.session.role !== 'admin') {
+        const error = `No access`
+        res.redirect(`/login?error=${error}`)
+    }else{
+        next()
+    }
+})
+
+
 
 router.use('/users', users);
 

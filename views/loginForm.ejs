@@ -11,12 +11,20 @@
     <title>Login Form</title>
   </head>
   <body>
+
+    <%if(err) {%>
+      <div class="container text-center mt-3">
+        <div class="alert alert-danger rounded mx-auto" role="alert" style="width:60%">
+          <%=err%>
+        </div>
+      </div>
+    <%}%>
     
     <div class="container text-center d-flex flex-column justify-content-center" style="height: 100vh;">
       <div class="cotainer border mx-auto p-5 rounded shadow-sm" style="width: 40%;">
-        <img src="../img/logo.png" alt="" width="220px" height="60px" class="mb-3">
+        <img src="https://i.ibb.co/TWDqLmV/logo.png" alt="" width="220px" height="60px" class="mb-3">
         
-        <form action="" class="mx-auto" method="POST">
+        <form action="/login" class="mx-auto" method="POST">
           <div class="form-floating mb-3">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
             <label for="floatingInput" class="text-muted">Email address</label>
