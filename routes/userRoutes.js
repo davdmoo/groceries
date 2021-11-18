@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Controller = require('../controllers/userController.js');
 
-router.use('/', (req, res) => res.send('users list'));
+router.get('/register', Controller.getRegister);
+router.post('/register', Controller.postRegister);
 
 module.exports = router;

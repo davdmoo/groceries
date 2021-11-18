@@ -20,11 +20,19 @@ class Controller {
     static getProductDetail(req, res) {
         Product.findByPk(+req.params.id)
         .then(data => {
-            res.render('product-detail', {product: data})
+            res.render('productDetailNew', {product: data, priceFormatter})
         })
         .catch(err => {
             res.send(err)
         })
+    }
+
+    static getBuyProduct(req, res) {
+        
+    }
+
+    static postBuyProduct(req, res) {
+
     }
 }
 

@@ -15,9 +15,9 @@
           <header class="d-flex align-items-center justify-content-between">
               <h1 class="my-5">Hello, Admin David</h1>
               <div class="butoons">
-                <button type="button" class="btn btn-success">Add New Item</button>
-                  <button type="button" class="btn btn-secondary">Out of Stock Items</button>
-                  <button type="button" class="btn btn-warning">Users</button>
+                <a href="/admin">
+                  <button type="button" class="btn btn-success">Back to Admin Page</button>
+                </a>
               </div>
           </header>
 
@@ -37,14 +37,14 @@
                 </thead>
                 <tbody>
                   <tr>
-                      <% users.forEach((el,i) => {%>
-                          <th scope="row">i + 1</th>
-                          <td><%=el.name%></td>
-                          <td><%=el.email%></td>
-                          <td><%=el.gender%></td>
-                          <td><%=el.age%></td>
-                          <td><%=el.city%></td>
-                          <td><%=el.address%></td>
+                      <% users.forEach((user,i) => {%>
+                          <th scope="row"><%=i+1%></th>
+                          <td><%=user.User.name%></td>
+                          <td><%=user.User.email%></td>
+                          <td><%=user.gender%></td>
+                          <td><%=user.age%></td>
+                          <td><%=user.city%></td>
+                          <td><%=user.address%></td>
                       <% }) %>
                   </tr>
                 </tbody>

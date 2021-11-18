@@ -1,4 +1,4 @@
-const { Category, Product, User } = require('../models');
+const { Category, Product, User, UserProfile } = require('../models');
 const { Op } = require('sequelize');
 const priceFormatter = require('../helpers/price-formatter')
 
@@ -150,8 +150,11 @@ class Controller {
     }
 
     static getUsers(req, res) {
-        User.findAll()
+        UserProfile.findAll({
+            include: User
+        })
         .then(data => {
+            console.log(data);
             res.render('userList', {users: data})
         })
         .catch(err => {
