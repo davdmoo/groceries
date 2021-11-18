@@ -11,6 +11,8 @@ router.get('/', ProductController.getProducts);
 router.get('/register', UserController.getRegister);
 router.post('/register', UserController.postRegister);
 
+router.get('/map', (req, res) => res.render('map'))
+
 router.get('/login', UserController.login);
 router.post('/login', UserController.postLogin);
 
