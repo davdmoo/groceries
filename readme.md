@@ -1,1 +1,1 @@
-groceries web-app
+groceries app
