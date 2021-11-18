@@ -13,38 +13,39 @@
   </head>
   <body>
     
-    <h1 class="text-center text-success my-5">Add New Product</h1>
+    <h1 class="text-center text-success my-5">Edit Product</h1>
 
     <div class="container">
-        <form class="row g-3 mx-auto" style="width: 80%;" method="POST" action="">
+        <form class="row g-3 mx-auto" style="width: 80%;" method="POST" action="/admin/update/<%=product.id%>">
             <div class="col-md-12">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name">
+              <input type="text" class="form-control" id="name" name="name" value="<%=product.name%>">
             </div>
             <div class="col-md-4">
               <label for="stock" class="form-label">Stock</label>
-              <input type="number" class="form-control" id="stock" name="stock">
+              <input type="number" class="form-control" id="stock" name="stock" value="<%=product.stock%>">
             </div>
             <div class="col-md-4">
               <label for="price" class="form-label">Price</label>
-              <input type="number" class="form-control" id="price" name="price">
+              <input type="number" class="form-control" id="price" name="price" value="<%=product.price%>">
             </div>
             <div class="col-md-4">
               <label for="category" class="form-label">Category</label>
-              <select id="category" class="form-select" name="CategoryId">
-                <option selected>Choose category</option>
-                <% category.forEach(el => {%>
+              <select id="category" class="form-select" name="CategoryId" value="<%=product.Category.name%>">
+                <option disabled="">Choose a category</option>
+                <option selected><%=product.Category.name%></option>
+                <% categories.forEach(el => {%>
                 <option value="<%=el.id%>"><%=el.name%></option>
                 <%})%>
               </select>
             </div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="description" style="height: 100px" name="description"></textarea>
+                <textarea class="form-control" placeholder="Description here" id="description" style="height: 100px" name="description"><%=product.description%></textarea>
                 <label for="description">Description</label>
               </div>
               
               <div class="col-12 text-center mt-5">
-                <button type="submit" class="btn btn-success">Add New Product</button>
+                <button type="submit" class="btn btn-success">Submit Changes</button>
               </div>
           </form>
 
