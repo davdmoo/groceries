@@ -1,5 +1,6 @@
 const { Category, Product, UserProfile, User } = require('../models');
 const priceFormatter = require('../helpers/price-formatter');
+const { Op } = require("sequelize");
 
 class Controller {
     static getProducts(req, res) {
@@ -19,8 +20,19 @@ class Controller {
     }
 
     static allProducts(req,res) {
+        const keyword = req.query.search
+
         let option = {
             include: Category
+        }
+
+        if(keyword) {
+            console.log(keyword)
+            option.where = {
+                name: {
+                    [Op.iLike]: `%${keyword}%`
+                }
+            }
         }
 
         Product.findAll(option)
