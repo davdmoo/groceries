@@ -26,15 +26,6 @@ router.use( function(req,res,next) {
     }
 })
 
-router.use( function(req,res,next) {
-    if(req.session.userId && req.session.role !== 'admin') {
-        const error = `No access`
-        res.redirect(`/login?error=${error}`)
-    }else{
-        next()
-    }
-})
-
 
 
 router.use('/users', users);
