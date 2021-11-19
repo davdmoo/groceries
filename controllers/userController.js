@@ -50,6 +50,9 @@ class Controller {
             res.redirect('/login');
         })
         .catch(err => {
+            const result = err.errors.map(el => {
+                return el.message
+            })
             res.send(err)
         })
     }
