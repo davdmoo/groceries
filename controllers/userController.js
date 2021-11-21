@@ -11,26 +11,37 @@ class Controller {
 
     static postLogin(req, res) {
         const {email,password} = req.body
-        console.log(req.body)
+        // console.log(req.body)
         User.findOne({where: {email}})
             .then(user => {
+                // console.log(user);
                 if(user) {
                     const isValid = bcrypt.compareSync(password, user.password)
                     if(isValid) {
                         req.session.userId = user.id
                         req.session.role = user.role
-                       res.redirect('/')
-                    }else {
+                        // console.log(req.session, 'ini dari controller');
+                       return res.redirect('/')
+                    } else {
                         const error = `Invalid email or password`
-                        res.redirect(`/login?error=${error}`)
+                        return res.redirect(`/login?error=${error}`)
                     }
-                }else {
+                } else {
                     const error = `Invalid email or password`
-                    res.redirect(`/login?error=${error}`)
+                    return res.redirect(`/login?error=${error}`)
                 }
 
             })
             .catch(err => res.send(err))
+    }
+
+    static logout(req, res) {
+        req.session.destroy(err => {
+            if (err) res.send(err);
+            else {
+                res.redirect('/login');
+            }
+        })
     }
 
     static getRegister(req, res) {
@@ -68,8 +79,6 @@ class Controller {
             res.send(err)
         })
     }
-
-   
 }
 
 module.exports = Controller;

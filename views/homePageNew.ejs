@@ -38,7 +38,8 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/users/profile/1">My Profile</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+              <li><a class="dropdown-item" href="/admin">Admin Page</a></li>
+              <li><a class="dropdown-item" href="/logout">Log Out</a></li>
             </ul>
           </li>
         </ul>
@@ -49,7 +50,14 @@
       <img src="https://i.postimg.cc/3w0PXNcn/Women-choosing-fresh-vegetables-from-farm-1.png" alt="Frame-1" border="0" width="100%">
     </div>
 
-    
+    <%if(err) {%>
+      <div class="container text-center mt-3">
+        <div class="alert alert-danger rounded mx-auto" role="alert" style="width:60%">
+          <%=err%>
+        </div>
+      </div>
+    <%}%>
+
     <div class="container my-5">
       <h1>Featured Product</h1>
       <div class="row row-cols-1 row-cols-md-4 g-4 text-center">

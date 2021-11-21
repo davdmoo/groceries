@@ -11,7 +11,7 @@ app.use (express.urlencoded({extended: false}));
 app.use(session({
     secret: 'postgres',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: { 
         secure: false,
         sameSite: true

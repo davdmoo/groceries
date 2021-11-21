@@ -12,7 +12,8 @@ class Controller {
 
         Product.findAll(option)
         .then(data => {
-            res.render('homePageNew', {products: data, priceFormatter})
+            const err = req.query.error;
+            res.render('homePageNew', {products: data, priceFormatter, err})
         })
         .catch(err => {
             res.send(err)
@@ -20,7 +21,7 @@ class Controller {
     }
 
     static allProducts(req,res) {
-        const keyword = req.query.search
+        const keyword = req.query.search;
 
         let option = {
             include: Category
