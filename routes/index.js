@@ -9,7 +9,6 @@ const UserController = require('../controllers/userController');
 router.get('/register', UserController.getRegister);
 router.post('/register', UserController.postRegister);
 
-router.get('/map', (req, res) => res.render('map'))
 
 router.get('/login', UserController.login);
 router.post('/login', UserController.postLogin);
@@ -29,6 +28,8 @@ router.use( function(req,res,next) {
 })
 
 router.use('/products', products);
+
+router.get('/map', (req, res) => res.render('map'));
 
 router.use( function(req,res,next) {
     // console.log(req.session);

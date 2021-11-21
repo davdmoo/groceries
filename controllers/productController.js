@@ -13,6 +13,7 @@ class Controller {
         Product.findAll(option)
         .then(data => {
             const err = req.query.error;
+            console.log(data);
             res.render('homePageNew', {products: data, priceFormatter, err})
         })
         .catch(err => {
